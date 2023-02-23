@@ -7,13 +7,21 @@
 - Run the following
 ```console
 . venv/bin/activate
+OR
+source venv/bin/activate
 ```
 ```console
 pip install -r requirements.txt
+OR
+pip3 install -r requirements.txt
 ```
 ```console
-flask --app app run --debug
+python flask --app app run --debug 
+OR
+python3 -m flask run --debug
 ```
+
+- Flask app will be running on http://127.0.0.1:5000
 
 ## Endpoints
 
