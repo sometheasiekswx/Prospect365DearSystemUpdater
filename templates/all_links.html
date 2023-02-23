@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .tg td {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg .tg-0pky {
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-0lax {
+            text-align: left;
+            vertical-align: top
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table class="tg">
+        <tbody>
+            <tr>
+                <td class="tg-0pky">URL</td>
+                <td class="tg-0lax">Methods</td>
+                <td class="tg-0pky">Endpoint</td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">/run</td>
+                <td class="tg-0lax">GET</td>
+                <td class="tg-0pky">Run the Updater</td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">/run/minutes/&lt;int:interval&gt;</td>
+                <td class="tg-0lax">GET</td>
+                <td class="tg-0pky">For example /run/minutes/60 will run the Updater every 60 minutes</td>
+            </tr>
+            <tr>
+                <td class="tg-0pky">/run/minutes/stop</td>
+                <td class="tg-0lax">GET</td>
+                <td class="tg-0pky">Use to stop the Updater from running every X minutes</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
