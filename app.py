@@ -91,7 +91,7 @@ def run_updater():
                     'CustomerID': dear_sale.get('CustomerID'),
                     'Location': dear_sale.get('Location'),
                     'AdditionalAttributes': {
-                        'AdditionalAttribute7': f'https://crm.prospect365.com/view/Quote/{quote_id}',
+                        'AdditionalAttribute7': f'https://crm.prospect365.com/view/Quotation/{quote_id}',
                     }
                 }
                 response = update_dear_sale(new_dear_sale)
@@ -126,7 +126,7 @@ def all_links():
 @app.route('/run')
 def run():
     checked, updated = run_updater()
-    return f'Complete! {checked} records checked! {updated} records updated'
+    return f'Complete! {checked} records checked and {updated} records updated'
 
 
 @app.route('/run/minutes/<int:interval>')
