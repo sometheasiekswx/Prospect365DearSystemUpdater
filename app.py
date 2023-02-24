@@ -26,8 +26,11 @@ def get_datetime_from_file():
         return datetime.datetime.strptime(datetime_str, '%Y-%m-%d %H:%M:%S.%f')
 
 
-def get_prospect_quotes():
-    url = 'https://crm-odata-v1.prospect365.com/Quotes'
+def get_prospect_quotes(last_ran):
+    url = f"https://crm-odata-v1.prospect365.com/Quotes?%24filter=LastUpdatedTimestamp gt {last_ran.strftime('%Y-%m-%dT%H:%M:%S.%fZ')} and CreatedByUserId ne 'DBA' and StatusFlag eq 'A'"
+    msg = f'Getting Quotes using {url}'
+    logger.info(msg)
+    print(msg)
     payload = {}
     headers = {
         'Authorization': 'Bearer ce58ee2da8077b7da37ffda25c6b3768'
@@ -68,7 +71,7 @@ def run_updater():
     print(msg)
 
     last_ran = get_datetime_from_file()
-    prospect_quotes = get_prospect_quotes()
+    prospect_quotes = get_prospect_quotes(last_ran)
     sale__qoute_time = []
     updated = 0
     last_updated = ''
