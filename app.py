@@ -106,16 +106,17 @@ def run_updater():
                 else:
                     updated += 1
                     logger.info(response.text)
-                    success_msg = f'Updated Sale https://inventory.dearsystems.com/Sale#{accounts_id} with Quote https://crm.prospect365.com/view/Quote/{quote_id}'
+                    success_msg = f'Updated Sale https://inventory.dearsystems.com/Sale#{accounts_id} with Quote https://crm.prospect365.com/view/Quotation/{quote_id}'
                     print(success_msg)
 
-    update_datetime_file(last_updated)
+    if last_updated != '':
+        update_datetime_file(last_updated)
 
     msg = 'Updated last_updated.txt & Updater has completed'
     logger.info(msg)
     print(msg)
 
-    return len(sale__qoute_time), updated
+    return len(prospect_quotes), updated
 
 
 
