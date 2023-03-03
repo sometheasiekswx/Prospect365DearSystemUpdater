@@ -36,3 +36,33 @@ python3 -m flask run --debug
 
 - Logs are found in `logging.log`  
 - Last updated datetime is found in `last_updated.txt`
+
+## 03/03-2023 Update
+
+App is now running in the background on the Ubuntu server
+
+### Set New Nnterval
+
+- Log unto the ubuntu server 
+- Visit the URL http://127.0.0.1:5000/run/minutes/stop in a browser OR running
+
+```
+wget http://127.0.0.1:5000/run/minutes/stop
+```
+
+-  Set new interval by visiting the URL http://127.0.0.1:5000/run/minutes/{your new interval} OR running
+
+```
+wget http://127.0.0.1:5000/run/minutes/{your new interval}
+```
+
+### If updater is down, run
+```console
+. venv/bin/activate
+```
+```console
+pip3 install -r requirements.txt
+```
+```
+nohup python3 -m flask run >/dev/null & disown
+```
