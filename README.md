@@ -41,7 +41,7 @@ python3 -m flask run --debug
 
 App is now running in the background on the Ubuntu server
 
-### Set New Nnterval
+### Set New Interval
 
 - Log unto the ubuntu server 
 - Visit the URL http://127.0.0.1:5000/run/minutes/stop in a browser OR running

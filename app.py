@@ -7,10 +7,12 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import time
 
 
-logger = logging.getLogger('prospect_dear')
-logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter(fmt='%(asctime)s %(levelname)-8s %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 fh = logging.FileHandler('logging.log')
-fh.setLevel(logging.DEBUG)
+fh.setFormatter(formatter)
+fh.setLevel(logging.INFO)
+logger = logging.getLogger('prospect_dear_updater')
+logger.setLevel(logging.INFO)
 logger.addHandler(fh)
 
 
@@ -130,17 +132,23 @@ def all_links():
 @app.route('/run')
 def run():
     checked, updated = run_updater()
-    return f'Complete! {checked} records checked and {updated} records updated'
+    msg = f'Complete! {checked} records checked and {updated} records updated'
+    logger.info(msg)
+    return msg
 
 
 @app.route('/run/minutes/<int:interval>')
 def run_every_minute(interval):
     scheduler.add_job(func=run_updater, trigger='interval', minutes=interval)
     scheduler.start()
-    return f'Updater is now running every {interval} minute'
+    msg = f'Updater is now running every {interval} minute'
+    logger.info(msg)
+    return msg
 
 
 @app.route('/run/minutes/stop')
 def stop_run_every_minute():
     scheduler.shutdown()
-    return f'Updater is now shutdown'
+    msg = f'Updater is now shutdown'
+    logger.info(msg)
+    return msg
