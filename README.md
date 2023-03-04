@@ -46,7 +46,7 @@ Code location: /home/ubuntu/Prospect365DearSystemUpdater
 ### Set New Interval
 
 - Log unto the ubuntu server 
-- Visit the URL http://127.0.0.1:5000/run/minutes/stop in a browser OR running
+- End the current interval by visiting the URL http://127.0.0.1:5000/run/minutes/stop in a browser OR running
 
 ```
 wget http://127.0.0.1:5000/run/minutes/stop
@@ -58,7 +58,9 @@ wget http://127.0.0.1:5000/run/minutes/stop
 wget http://127.0.0.1:5000/run/minutes/{your new interval}
 ```
 
-### If updater is down, run
+### If updater is down
+- Change directory to the Prospect365DearSystemUpdater folder (ex. /home/ubuntu/Prospect365DearSystemUpdater)
+- Run
 ```console
 . venv/bin/activate
 ```
