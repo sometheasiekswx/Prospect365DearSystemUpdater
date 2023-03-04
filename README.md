@@ -3,7 +3,7 @@
 ## Install and run
 
 - Ensure all the correct Prospect365 and DearSystem API keys, Authorization bearer, and Account details are added in app.py
-- Change directory to the Prospect365DearSystemUpdater folder
+- Change directory to the Prospect365DearSystemUpdater folder (ex. /home/ubuntu/Prospect365DearSystemUpdater)
 - Run the following
 ```console
 . venv/bin/activate
@@ -37,9 +37,11 @@ python3 -m flask run --debug
 - Logs are found in `logging.log`  
 - Last updated datetime is found in `last_updated.txt`
 
-## 03/03-2023 Update
+## 03/03-2023 Update - Installed on Ubuntu server
 
-App is now running in the background on the Ubuntu server
+App is now running in the background on the Ubuntu server 
+
+Code location: /home/ubuntu/Prospect365DearSystemUpdater
 
 ### Set New Interval
 
