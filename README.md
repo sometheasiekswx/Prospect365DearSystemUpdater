@@ -3,7 +3,7 @@
 ## Install and run
 
 - Ensure all the correct Prospect365 and DearSystem API keys, Authorization bearer, and Account details are added in app.py
-
+- Change directory to the Prospect365DearSystemUpdater folder
 - Run the following
 ```console
 . venv/bin/activate
