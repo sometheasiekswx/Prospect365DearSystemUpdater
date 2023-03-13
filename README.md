@@ -45,11 +45,36 @@ Code location: /home/ubuntu/Prospect365DearSystemUpdater
 
 ### Set New Interval
 
-- Log unto the ubuntu server 
-- End the current interval by visiting the URL http://127.0.0.1:5000/run/minutes/stop in a browser OR running
+- Log unto the ubuntu server
+- Visit the URL http://127.0.0.1:5000/run/minutes/stop in a browser OR running
 
 ```
 wget http://127.0.0.1:5000/run/minutes/stop
+```
+
+- Grab the PID of the current background task
+
+```
+lsof -i :5000
+```
+
+Example of result where PID is 107890:
+
+```
+COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+python3 107890 ubuntu    4u  IPv4 900678      0t0  TCP localhost:5000 (LISTEN)
+```
+
+- Kill the current background task
+
+```
+kill -9 {PID}
+```
+
+- Run new background task
+
+```
+nohup python3 -m flask run >/dev/null & disown
 ```
 
 -  Set new interval by visiting the URL http://127.0.0.1:5000/run/minutes/{your new interval} OR running
@@ -59,6 +84,7 @@ wget http://127.0.0.1:5000/run/minutes/{your new interval}
 ```
 
 ### If updater is down
+
 - Change directory to the Prospect365DearSystemUpdater folder (ex. /home/ubuntu/Prospect365DearSystemUpdater)
 - Run
 ```console
