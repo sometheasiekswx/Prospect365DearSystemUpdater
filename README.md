@@ -15,11 +15,22 @@ pip install -r requirements.txt
 OR
 pip3 install -r requirements.txt
 ```
-```console
-python flask --app app run --debug 
-OR
-python3 -m flask run --debug
-```
+
+- **Two options to run**
+
+    1. Run as a new background task 
+
+    ```
+    nohup python3 -m flask run >/dev/null & disown
+    ```
+
+    2. Run to test and debug 
+
+    ```console
+    python flask --app app run --debug 
+    OR
+    python3 -m flask run --debug
+    ```
 
 - Flask app will be running on http://127.0.0.1:5000
 
@@ -71,7 +82,7 @@ python3 107890 ubuntu    4u  IPv4 900678      0t0  TCP localhost:5000 (LISTEN)
 kill -9 {PID}
 ```
 
-- Run new background task
+- Run as a new background task
 
 ```
 nohup python3 -m flask run >/dev/null & disown
