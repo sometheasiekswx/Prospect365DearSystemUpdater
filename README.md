@@ -18,13 +18,13 @@ pip3 install -r requirements.txt
 
 - **Two options to run**
 
-    1. Run as a new background task 
+    1. Run as a new background task (Production)
 
     ```
     nohup python3 -m flask run >/dev/null & disown
     ```
 
-    2. Run to test and debug 
+    2. Run to test and debug (Development)
 
     ```console
     python flask --app app run --debug 
