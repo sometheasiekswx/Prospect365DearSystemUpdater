@@ -2,7 +2,7 @@ APScheduler==3.10.0
 autopep8==2.0.1
 aws-cfn-bootstrap==2.0
 backports.zoneinfo==0.2.1
-certifi==2022.12.7
+certifi==2026.10.19
 charset-normalizer==3.0.1
 click==8.1.3
 docutils==0.14
